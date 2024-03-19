@@ -1,3 +1,6 @@
+
+
+
 .moreView {
   margin: 16px 16px 24px;
   padding: 16px 16px 32px;
@@ -27,8 +30,7 @@
 
 .moreView .cards {
   white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+
 }
 
 .card {
@@ -39,6 +41,9 @@
   height: 270px;
   display: inline-block;
   cursor: pointer;
+  border: 1px solid black;
+  flex: 1 1 23%; /* Adjust width as needed */
+  height: fit-content;
 }
 
 .card .favorite {
@@ -54,14 +59,21 @@
 }
 
 .card .image img {
-  height: 100px;
+  height: fit-content;
+  width: fit-content;
   max-width: 100%;
   max-height: 100%;
   min-height: 100%;
   text-align: center;
 }
+
+.content{
+  background-color: #bdc5c7;
+  padding-left: 10px;
+  margin-left: -12px;
+  margin-right: -12px;
+}
 .card .content .rate {
-  margin-top: 10px;
   font-size: larger;
   font-weight: bold;
 }
@@ -75,6 +87,8 @@
   display: flex;
   justify-content: flex-end;
   font-size: small;
+  padding-bottom: 10px;
+  margin-right: 10px;
 }
 
 .recommendations {
@@ -84,4 +98,21 @@
 .recommendations .heading span {
   font-size: 24px;
   color: #002f34;
+}
+
+.postParentDiv{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-basis: 48%; /* Adjust width for smaller screens */
+  }
 }

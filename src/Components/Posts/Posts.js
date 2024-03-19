@@ -5,6 +5,7 @@ import { FirebaseContext } from '../../store/FirebaseContext';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
 import { PostContext } from '../../store/PostContext';
 import {useNavigate} from 'react-router-dom'
+import LoadingPopup from '../Loading/LoadingPopup';
 
 function Posts() {
 
@@ -14,9 +15,14 @@ function Posts() {
   const [products,setProducts] = useState([])
   const {setPostDetails,postDetails} = useContext(PostContext)
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
       try {
         const querySnapshot = await getDocs(collection(firestore, "sell"));
         const allProducts = querySnapshot.docs.map((doc) => ({
@@ -36,10 +42,11 @@ function Posts() {
 
   return (
     <div className="postParentDiv">
+      <LoadingPopup isLoading={isLoading} />
       <div className="moreView">
+          <h2>Fresh recomentations</h2>
         <div className="heading">
-          <span>Quick Menu</span>
-          <span>View more</span>
+          {/* <span>View more</span> */}
         </div>
         <div className="cards">
 
@@ -65,9 +72,9 @@ function Posts() {
               <p className="rate">&#x20B9; {product.price} </p>
               <span className="kilometer"> {product.category} </span>
               <p className="name"> {product.name} </p>
-            </div>
             <div className="date">
               <span> {product.createdAt} </span>
+            </div>
             </div>
           </div>
             )
@@ -79,7 +86,7 @@ function Posts() {
       </div>
       <div className="recommendations">
         <div className="heading">
-          <span>Fresh recommendations</span>
+          <h1>Fresh recommendations</h1>
         </div>
         <div className="cards">
           <div className="card">
@@ -93,9 +100,9 @@ function Posts() {
               <p className="rate">&#x20B9; 250000</p>
               <span className="kilometer">Two Wheeler</span>
               <p className="name"> YAMAHA R15V3</p>
-            </div>
             <div className="date">
               <span>10/5/2021</span>
+            </div>
             </div>
           </div>
         </div>

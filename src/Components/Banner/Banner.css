@@ -5,7 +5,7 @@
 }
 .bannerParentDiv .bannerChildDiv .menuBar {
   display: flex;
-  padding: 10px 16px 10px 16px;
+  padding: 10px 16px 10px 130px;
 }
 
 .bannerParentDiv .bannerChildDiv .menuBar span {
@@ -19,7 +19,7 @@
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
 }
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
-  padding: 10px;
+  padding: 22px;
 }
 
 .bannerChildDiv .banner {
@@ -37,4 +37,12 @@
   .bannerChildDiv .banner {
     position: relative;
   }
+}
+
+
+
+
+.otherQuickOptions span:hover {
+  color: #52a7b3;
+  cursor: pointer;
 }

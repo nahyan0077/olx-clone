@@ -1,18 +1,22 @@
 .centerDiv {
     border: 1px solid black;
-    width: max-content;
+    width: 300px;
     padding: 50px;
     position: absolute;
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 6px;
+    margin-top: -100px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
   .input {
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
     outline-color: transparent;
+    width: 95%;
+    height: 30px;
   }
   
   .uploadBtn {

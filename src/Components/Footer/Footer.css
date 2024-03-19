@@ -1,16 +1,25 @@
 .footerParentDiv {
-  width: 100vw;
+  width: 100%;
 }
+
 .footerParentDiv .content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* Align items at the start of the container */
   background: #ebeeef;
   padding: 16px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
+
+.footerParentDiv .content > div {
+  flex: 1; /* Equal width for each column */
+  margin-right: 20px; /* Add some margin between columns */
+}
+
 .footerParentDiv .content .heading {
   font-size: 24px;
-  font-weight: bolder;
+  font-weight: bold; /* Correct typo */
 }
 
 .footerParentDiv .footer {

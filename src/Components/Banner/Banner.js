@@ -13,12 +13,12 @@ function Banner() {
           </div>
           <div className="otherQuickOptions">
             <span>Cars</span>
-            <span>Motorcy...</span>
-            <span>Mobile Ph...</span>
-            <span>For Sale:Houses & Apart...</span>
-            <span>Scoot...</span>
-            <span>Commercial & Other Ve...</span>
-            <span>For Rent: House & Apart...</span>
+            <span>Motorcycle</span>
+            <span>Mobile Phone</span>
+            <span>For Sale: Houses & Apartments</span>
+            <span>Scooter</span>
+            <span>Commercial & Other Vehicles</span>
+            <span>For Rent: Houses & Apartments</span>
           </div>
         </div>
         <div className="banner">

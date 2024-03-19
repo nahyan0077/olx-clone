@@ -4,7 +4,15 @@ import './Footer.css';
 
 function Footer() {
   return (
+
     <div className="footerParentDiv">
+      <div className="banner">
+      <img
+        style={{width:'100%'}}
+        src="../../../Images/banner copy.png"
+        alt=""
+      />
+    </div>
       <div className="content">
         <div>
           <div className="heading">

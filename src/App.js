@@ -17,10 +17,11 @@ import ViewPost from './Pages/ViewPost';
 function App() {
   const {user,setUser} = useContext(AuthContext)
   const {firestore} = useContext(FirebaseContext)
+  
   useEffect(() => {
     const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      setUser(user)
+    onAuthStateChanged(auth, (User) => {
+      setUser(User)
     });
 
   }, [])

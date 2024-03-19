@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-
 import Logo from '../../olx-logo.png';
 import './Login.css';
 import { FirebaseContext } from '../../store/FirebaseContext';
@@ -33,7 +32,8 @@ function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+        <h1 style={{textAlign:'center',marginTopTop:'30px'}} >Welcome to</h1>
+        <img style={{marginLeft:'60px',marginBottom:'20px'}} width="150px" height="150px" src={Logo}></img>
         <form onSubmit={handleLogin} > 
           <label htmlFor="fname">Email</label>
           <br />
@@ -46,6 +46,7 @@ function Login() {
             name="email"
             defaultValue="John"
           />
+          <br />
           <br />
           <label htmlFor="lname">Password</label>
           <br />
@@ -62,7 +63,10 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <br />
+        <a style={{fontWeight:'bold'}} onClick={()=>{
+          navigate('/signup')
+        }} >Signup</a>
       </div>
     </div>
   );
