@@ -10,6 +10,7 @@ function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loginError,setError] = useState('')
 
   const {firestore} = useContext(FirebaseContext)
 
@@ -24,6 +25,7 @@ function Login() {
         navigate('/')
       })
       .catch((error) => {
+        setError(error.message)
         console.log("the error is.....",error);
       });
 
@@ -34,6 +36,7 @@ function Login() {
       <div className="loginParentDiv">
         <h1 style={{textAlign:'center',marginTopTop:'30px'}} >Welcome to</h1>
         <img style={{marginLeft:'60px',marginBottom:'20px'}} width="150px" height="150px" src={Logo}></img>
+        <p style={{color:'red'}} > {loginError} </p>
         <form onSubmit={handleLogin} > 
           <label htmlFor="fname">Email</label>
           <br />

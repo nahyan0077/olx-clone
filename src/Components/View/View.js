@@ -1,7 +1,7 @@
 import React, { useContext, useState,useEffect } from 'react';
 import './View.css';
 import { PostContext } from '../../store/PostContext';
-import { collection, addDoc, query, where, getDocs } from 'firebase/firestore/lite'
+import { collection, addDoc, query, where, getDocs ,getFirestore } from 'firebase/firestore/lite'
 import { FirebaseContext } from '../../store/FirebaseContext';
 
 
@@ -15,7 +15,7 @@ function View() {
     const fetchUserDetails = async () => {
       try {
         const { userId } = postDetails;
-        const q = query(collection(firestore, "users"), where("userId", "==", userId));
+        const q = query(collection(getFirestore(), "users"), where("userId", "==", userId));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
           setUserDetails(doc.data());
