@@ -1,50 +1,94 @@
+/* View.css */
+
 .viewParentDiv {
-  padding-top: 4em;
   display: flex;
-}
-.viewParentDiv .imageShowDiv {
-  padding: 16px;
-  width: 70vw;
-}
-.viewParentDiv .imageShowDiv img {
-  width: 65vw;
-  height: 85vh;
+  flex-direction: column;
+  padding: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.viewParentDiv .rightSection {
-  padding: 16px;
-  margin-top: 3em;
-  width: 30vw;
+@media (min-width: 768px) {
+  .viewParentDiv {
+    flex-direction: row;
+  }
 }
 
-.viewParentDiv .rightSection .productDetails :first-child {
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #002f34;
-  font-size: 34px;
-  line-height: 32px;
+.imageShowDiv {
+  width: 100%;
+  max-width: 700px;
   margin-bottom: 20px;
 }
 
-.viewParentDiv .rightSection .productDetails {
-  border: 1px solid black;
-  padding: 6px;
-  border-radius: 6px;
-  margin-bottom: 2em;
+@media (min-width: 768px) {
+  .imageShowDiv {
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+}
+
+.imageShowDiv img {
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.viewParentDiv .rightSection .contactDetails {
-  border: 1px solid black;
-  padding: 6px;
-  border-radius: 6px;
+.rightSection {
+  flex: 1;
 }
 
-.viewParentDiv .rightSection .contactDetails :first-child {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
+.productDetails {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.productDetails p:first-child {
+  font-size: 28px;
+  font-weight: 600;
   color: #002f34;
-  font-weight: 400;
-  padding: 0;
+  margin-bottom: 10px;
+}
+
+.productDetails span:nth-child(2) {
+  font-size: 20px;
+  font-weight: 500;
+  color: #002f34;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.productDetails p:nth-child(3) {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.productDetails span:last-child {
+  font-size: 14px;
+  color: #999;
+  display: block;
+}
+
+.contactDetails {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactDetails p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  color: #002f34;
+  margin-bottom: 15px;
+}
+
+.contactDetails p:not(:first-child) {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
 }

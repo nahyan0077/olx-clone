@@ -1,15 +1,15 @@
-import React, { useContext, useState,useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './View.css';
 import { PostContext } from '../../store/PostContext';
-import { collection, addDoc, query, where, getDocs ,getFirestore } from 'firebase/firestore/lite'
+import { collection, query, where, getDocs, getFirestore } from 'firebase/firestore/lite'
 import { FirebaseContext } from '../../store/FirebaseContext';
 
 
 function View() {
-  const [userDetails,setUserDetails] = useState([])
-  const {postDetails} = useContext(PostContext)
-  const {firestore} = useContext(FirebaseContext)
-  
+  const [userDetails, setUserDetails] = useState([])
+  const { postDetails } = useContext(PostContext)
+  const { firestore } = useContext(FirebaseContext)
+
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -27,27 +27,24 @@ function View() {
 
     fetchUserDetails();
   }, [postDetails, firestore]);
-  
+
 
   return (
     <div className="viewParentDiv">
       <div className="imageShowDiv">
-        <img
-          src={postDetails.url}
-          alt=""
-        />
+        <img src={postDetails.url} alt={postDetails.name} />
       </div>
       <div className="rightSection">
         <div className="productDetails">
-          <p>&#x20B9; {postDetails.price} </p>
-          <span> {postDetails.name}  </span>
-          <p> {postDetails.category} </p>
-          <span> {postDetails.createdAt} </span>
+          <p>&#x20B9; {postDetails.price}</p>
+          <span>{postDetails.name}</span>
+          <p>{postDetails.category}</p>
+          <span>{postDetails.createdAt}</span>
         </div>
         <div className="contactDetails">
-          <p> Seller Details </p>
-          <p> {userDetails.userName} </p>
-          <p> {userDetails.phone} </p>
+          <p>Seller Details</p>
+          <p>{userDetails.userName}</p>
+          <p>{userDetails.phone}</p>
         </div>
       </div>
     </div>
