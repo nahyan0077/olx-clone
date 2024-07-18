@@ -1,5 +1,5 @@
 import {createContext, useState} from 'react'
-import {firestore} from '../firebase/Config'
+import firestore from '../firebase/Config'
 
 
 export const FirebaseContext = createContext(null)

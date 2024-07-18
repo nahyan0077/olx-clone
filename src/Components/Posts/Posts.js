@@ -1,7 +1,6 @@
 import React,{useEffect, useContext, useState} from 'react';
 import Heart from '../../assets/Heart';
 import './Post.css';
-import { FirebaseContext } from '../../store/FirebaseContext';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
 import { PostContext } from '../../store/PostContext';
 import {useNavigate} from 'react-router-dom'
@@ -13,7 +12,7 @@ function Posts() {
   var firestore = getFirestore();
 
   const [products,setProducts] = useState([])
-  const {setPostDetails,postDetails} = useContext(PostContext)
+  const {setPostDetails} = useContext(PostContext)
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
 

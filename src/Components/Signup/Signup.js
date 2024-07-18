@@ -3,10 +3,10 @@ import Logo from '../../olx-logo.png';
 import './Signup.css';
 import { FirebaseContext } from '../../store/FirebaseContext';
 import { getAuth, createUserWithEmailAndPassword, updateProfile  } from "firebase/auth";
-import {  collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore/lite';
+import {  collection, addDoc } from 'firebase/firestore/lite';
 import {useNavigate} from 'react-router-dom'
 import {signUpValidationSchema} from '../../FormValidationSchema/signupValidation'
-import {Formik, Form, Field, useFormik, ErrorMessage} from 'formik'
+import {Formik, Form, Field, ErrorMessage} from 'formik'
 import LoadingPopup from '../Loading/LoadingPopup';
 
 
