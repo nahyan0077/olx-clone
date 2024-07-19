@@ -57,7 +57,7 @@ export default function Signup() {
     <div>
       <div className="signupParentDiv">
       <h1 style={{textAlign:'center',marginTopTop:'30px'}} >Welcome to</h1>
-        <img style={{marginLeft:'60px',marginBottom:'20px'}} width="150px" height="150px" src={Logo}></img>
+        <img style={{marginLeft:'60px',marginBottom:'20px'}} width="150px" height="150px" src={Logo} alt='image' ></img>
         <LoadingPopup isLoading={isLoading} />
         <Formik 
           initialValues={initialValues}
